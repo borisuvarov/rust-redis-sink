@@ -22,4 +22,5 @@ While tested on an EC2 machine in the same VPC as Elasticache Redis (single node
 
 ## How To Run
 It is recommended to run this CLI on an EC2 machine within the same VPC as Elasticache Redis. Since it parallelizes work using [Rayon](https://docs.rs/rayon/latest/rayon/), it's worthwhile to use a machine with a decent number of CPU cores if performance matters.
+
 ```RUST_LOG=info REDIS_MODE=single_node REDIS_URL=redis://some-domain-name-001.areswo.0001.use1.cache.amazonaws.com:6379  ./target/release/rust-redis-sink -b 'your-bucket-name' -p 'your/prefix/'```
