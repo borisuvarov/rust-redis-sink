@@ -5,7 +5,7 @@ This project features a simple CLI that provides the ability to ingest JSON file
 - The file should be gzipped 
 
 ### Redis Data Model
-Each key (string) and gzipped JSON value pair will be pushed to Redis using a SET operation (via a batch pipeline of 100 commands).
+Each key (string) and gzipped (this app handles value compression) JSON value pair will be pushed to Redis using a SET operation (via a batch pipeline of 100 commands).
 
 ### Performance
 While tested on an EC2 machine in the same VPC as Elasticache Redis (single node), this app was able to pull 13 GB of gzipped JSON from S3 and ingest it into Redis, resulting in 13 million keys, all within 10 minutes. 
